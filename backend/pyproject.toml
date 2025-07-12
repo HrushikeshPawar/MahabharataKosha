@@ -1,7 +1,7 @@
 [project]
 name = "mahabharata-kosha-backend"
 version = "0.1.0"
-description = "Add your description here"
+description = "Backend for Mahabharata Kosha, a multi-service application with FastAPI and PostgreSQL"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
