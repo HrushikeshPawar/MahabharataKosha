@@ -1,0 +1,23 @@
+
+# Environment
+.env
+.venv/
+.DS_Store
+
+# backend
+*.pyc
+__pycache__
+*.pyo
+*.pyd
+
+# Frontend
+node_modules/
+dist/
+.vite/
+
+# IDE
+.vscode/
+.idea/
+.mypy_cache
+__marimo__
+/stagged_commit.txt
