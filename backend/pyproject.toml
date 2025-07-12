@@ -1,0 +1,27 @@
+[project]
+name = "mahabharata-kosha-backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alembic>=1.16.3",
+    "fastapi-users>=14.0.1",
+    "fastapi[standard]>=0.116.0",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.7",
+    "python-dotenv>=1.1.1",
+    "sqlalchemy>=2.0.41",
+    "uvicorn[standard]>=0.35.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "ipywidgets>=8.1.7",
+    "marimo[recommended]>=0.14.10",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.12.2",
+    "watchdog>=6.0.0",
+]

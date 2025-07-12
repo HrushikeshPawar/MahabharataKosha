@@ -1,0 +1,36 @@
+# Git history and configuration
+.git
+.gitignore
+README.md
+CONTRIBUTING.md
+LICENSE
+
+# IDE and editor settings
+.vscode/
+.mypy_cache/
+
+# Python virtual environment and cache files
+**/.venv/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Environment files - do not commit secrets
+.env
+.env.*
+# Keep example files for guidance, but they can be excluded from the image
+# .env.example
+
+# Notebooks and temporary Marimo files
+notebooks/
+__marimo__/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
