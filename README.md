@@ -1,7 +1,7 @@
 # Mahabharata Kosha (महाभारत कोश)
 
 [![Project Status: WIP](https://img.shields.io/badge/status-work_in_progress-yellow.svg)](https://github.com/your-username/mahabharata-kosha)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 An interactive, web-based learning environment for the Mahabharata in its original Sanskrit.
@@ -111,4 +111,5 @@ This project will be developed in phases. The primary goal is to reach a feature
 This is a personal learning project, but contributions and suggestions are welcome. Please read our `CONTRIBUTING.md` to learn about our development process, commit conventions, and more.
 
 ## 📜 License
-This project is licensed under the GNU General Public License v3.0. This choice was made to ensure that the project and all of its derivatives will always remain free and open-source for the benefit of the entire community.
+
+This project is licensed under the **GNU Affero General Public License v3.0**. The full license text will be available in the `LICENSE` file. This choice was made to ensure that the project and all of its derivatives—*especially those run as network services*—will always remain free and open-source for the benefit of the entire community.
