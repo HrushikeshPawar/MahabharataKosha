@@ -2,22 +2,27 @@
 # Environment
 .env
 .venv/
-.DS_Store
 
-# backend
-*.pyc
+# python
 __pycache__
+*.pyc
 *.pyo
 *.pyd
+.mypy_cache
+__marimo__
 
-# Frontend
+# Node.js
 node_modules/
 dist/
 .vite/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # IDE
 .vscode/
 .idea/
-.mypy_cache
-__marimo__
-/stagged_commit.txt
+.DS_Store
+
+# Project Specific
+/notebooks
