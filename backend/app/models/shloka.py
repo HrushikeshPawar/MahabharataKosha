@@ -15,7 +15,7 @@ class Shloka(Base):
     shloka_num: Mapped[int] = mapped_column(Integer, nullable=False)
     text_sanskrit: Mapped[str] = mapped_column(Text, nullable=False)
     text_english: Mapped[str] = mapped_column(Text, nullable=False)
-    adhyaya_id: Mapped[int] = mapped_column(Integer, ForeignKey("adhyayas.id"))
+    adhyaya_id: Mapped[int] = mapped_column(Integer, ForeignKey("adhyayas.id"), nullable=False)
 
     adhyaya: Mapped["Adhyaya"] = relationship("Adhyaya", back_populates="shlokas")
 
