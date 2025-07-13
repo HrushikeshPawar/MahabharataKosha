@@ -20,4 +20,4 @@ class Shloka(Base):
     adhyaya: Mapped["Adhyaya"] = relationship("Adhyaya", back_populates="shlokas")
 
     def __repr__(self) -> str:
-        return f"<Shloka(id={self.id}, shloka_num='{self.shloka_num}')>"
+        return f"<Shloka(id={self.id}, shloka_num={self.shloka_num})>"
