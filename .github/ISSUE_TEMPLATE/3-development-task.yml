@@ -1,0 +1,55 @@
+name: "🚀 Development Task"
+description: "A defined task for development, documentation, or project chores."
+labels: ["task"]
+body:
+  - type: input
+    id: objective
+    attributes:
+      label: "Objective"
+      description: "A clear, one-sentence summary of the goal. What are we trying to achieve with this task?"
+      placeholder: "e.g., Create the API endpoint to fetch verses for a specific chapter."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: "Proposed Changes"
+      description: "A high-level, bulleted list of the technical changes planned for this task."
+      placeholder: |
+        - Create a new FastAPI router for verses.
+        - Implement a CRUD function to query the database.
+        - Add Pydantic schemas for response validation.
+  - type: textarea
+    id: affected-files
+    attributes:
+      label: "Affected Files"
+      description: "A list of the key files or directories that are expected to be created or modified."
+      placeholder: |
+        - backend/app/api/v1/verses.py
+        - backend/app/crud/crud_verse.py
+        - backend/tests/api/v1/test_verses.py
+  - type: textarea
+    id: technical-diagrams
+    attributes:
+      label: "🖼️ Diagrams or Technical Media (Optional)"
+      description: "If helpful, add any technical diagrams, such as architecture mockups, database schema diagrams, or API flowcharts. You can drag & drop images here."
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "How will we know this change is successful and the task is complete?"
+      placeholder: "A successful GET request to the new endpoint returns a 200 OK status with a JSON array of verse objects."
+    validations:
+      required: true
+  - type: checkboxes
+    id: definition-of-done
+    attributes:
+      label: "Definition of Done"
+      description: "This task is complete when all of the following are checked."
+      options:
+        - label: "All code changes are implemented."
+        - label: "Relevant tests have been added and are passing."
+        - label: "The application runs successfully locally with these changes."
+        - label: "The corresponding Pull Request has been reviewed and merged."
