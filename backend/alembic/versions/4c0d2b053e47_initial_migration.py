@@ -31,7 +31,6 @@ def upgrade() -> None:
     sa.UniqueConstraint('title_english'),
     sa.UniqueConstraint('title_sanskrit')
     )
-    op.create_index(op.f('ix_parvas_id'), 'parvas', ['id'], unique=False)
     op.create_table('adhyayas',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title_sanskrit', sa.String(), nullable=False),
@@ -41,7 +40,6 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['parva_id'], ['parvas.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_index(op.f('ix_adhyayas_id'), 'adhyayas', ['id'], unique=False)
     op.create_table('shlokas',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('shloka_num', sa.Integer(), nullable=False),
@@ -51,7 +49,6 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['adhyaya_id'], ['adhyayas.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_index(op.f('ix_shlokas_id'), 'shlokas', ['id'], unique=False)
     # ### end Alembic commands ###
 
 
