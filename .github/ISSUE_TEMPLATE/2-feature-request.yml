@@ -1,0 +1,44 @@
+name: "✨ Feature Request"
+description: "Suggest an idea or a new feature for this project."
+labels: ["feature", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting an idea! We appreciate your input.
+  - type: checkboxes
+    id: pre-flight-checks
+    attributes:
+      label: "Pre-flight Checklist"
+      options:
+        - label: "I have searched the existing issues and have not found a similar feature request."
+          required: true
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: "Is your feature request related to a problem?"
+      description: "Please describe the problem or frustration this feature would solve. (e.g., I'm always frustrated when...)"
+      placeholder: "It's hard to remember which verses I found most interesting. I wish I could save them."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Describe the Solution You'd Like"
+      description: "How would this new feature solve the problem? Be as specific as possible."
+      placeholder: "I would like a 'Bookmark' button next to each verse. Clicking it would save the verse to a personal 'My Bookmarks' page."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Describe Alternatives You've Considered"
+      description: "Have you thought of any alternative solutions or features?"
+      placeholder: "I also considered a simple note-taking feature, but bookmarks seem more direct for this problem."
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "🖼️ Additional Context & Mockups"
+      description: "Add any other context about the feature request here. Feel free to drag & drop mockups, diagrams, or screenshots to illustrate your idea."
+    validations:
+      required: false

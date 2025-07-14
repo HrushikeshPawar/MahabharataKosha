@@ -1,0 +1,61 @@
+name: "🐛 Bug Report"
+description: "Create a report to help us improve the application."
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to fill out this bug report!
+  - type: checkboxes
+    id: pre-flight-checks
+    attributes:
+      label: "Pre-flight Checklist"
+      description: "Please ensure you've completed these steps before submitting."
+      options:
+        - label: "I have searched the existing issues and have not found a similar bug report."
+          required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: "Describe the Bug"
+      description: "A clear and concise description of what the bug is. What went wrong?"
+      placeholder: "When I click the 'Next Chapter' button on Parva 1, Chapter 5, the page crashes."
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Provide the exact steps to reliably reproduce the behavior."
+      placeholder: |
+        1. Go to the reader view for Parva 1, Chapter 5.
+        2. Click on the 'Next Chapter' button at the bottom.
+        3. The application shows a white screen.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "A clear description of what you expected to happen."
+      placeholder: "I expected to be navigated to the reader view for Parva 1, Chapter 6."
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "🖼️ Screenshots or Video"
+      description: "If applicable, add screenshots, GIFs, or a short video to help explain the problem. You can drag & drop files directly into this box."
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Environment Details"
+      description: "Please provide details about the environment you encountered the bug in."
+      placeholder: |
+        - OS: Ubuntu 22.04
+        - Browser: Chrome 126
+        - Docker Version: Docker Desktop 4.28.0
+    validations:
+      required: false
