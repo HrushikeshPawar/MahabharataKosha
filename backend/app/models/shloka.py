@@ -1,5 +1,5 @@
 from typing import TYPE_CHECKING, Optional
-from sqlalchemy import ForeignKey, Integer, Text
+from sqlalchemy import ForeignKey, Integer, Text, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import JSONB
 
@@ -14,20 +14,24 @@ class Shloka(Base):
     __tablename__ = "shlokas"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    
+    # The BORI Unique Identifier (parsed from the source file)
     parva_num: Mapped[int] = mapped_column(Integer, nullable=False)
     adhyaya_num: Mapped[int] = mapped_column(Integer, nullable=False)
     shloka_num: Mapped[int] = mapped_column(Integer, nullable=False)  # Verse number
     pada_char: Mapped[str] = mapped_column(Text, nullable=False)
-    line_type: Mapped[str] = mapped_column(Text, nullable=False)  # e.g., 'verse', 'prose'
 
+    # The actual text content
     text_sanskrit: Mapped[str] = mapped_column(Text, nullable=False)  # Original Sanskrit
     text_sanskrit_split: Mapped[Optional[str]] = mapped_column(Text, nullable=True)  # Sanskrit with compounds split
     text_english: Mapped[str] = mapped_column(Text, nullable=False)  # English translation
 
-    # For future NLP use cases, storing pre-computed linguistic analysis
-    linguistic_analysis: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True)
+    #  Rich metadata for future NLP use cases, storing pre-computed linguistic analysis
+    line_type: Mapped[str] = mapped_column(String(50), default="VERSE", nullable=False) # e.g., VERSE, PROSE, HEADER
+    linguistic_analysis: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True) # For NLP results
+    
+    # Relationships (Less critical for lookup now, but still good for structure)
     adhyaya_id: Mapped[int] = mapped_column(Integer, ForeignKey("adhyayas.id"), nullable=False)
-
     adhyaya: Mapped["Adhyaya"] = relationship("Adhyaya", back_populates="shlokas")
 
     # Setting up for multilingual explanations later on.
