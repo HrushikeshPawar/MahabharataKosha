@@ -46,8 +46,8 @@ A complete local development environment is orchestrated with Docker Compose. Wi
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/mahabharata-kosha.git
-    cd mahabharata-kosha
+    git clone https://github.com/HrushikeshPawar/MahabharataKosha.git
+    cd MahabharataKosha
     ```
 
 2.  **Create the environment file:**
@@ -89,7 +89,7 @@ This project will be developed in phases. The primary goal is to reach a feature
 
 *   **Phase 1: MVP Foundation (In Progress)**
     *   [x] Set up project scaffolding and Docker environment.
-    *   [ ] Define database schema and set up migrations.
+    *   [x] Define database schema and set up migrations.
     *   [ ] Ingest and align raw Sanskrit and English texts.
     *   [ ] Build core API for serving verse data.
     *   [ ] Build basic frontend reader UI.
