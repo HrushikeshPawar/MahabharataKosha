@@ -1,5 +1,5 @@
 from typing import TYPE_CHECKING, Optional
-from sqlalchemy import ForeignKey, Integer, Text, String
+from sqlalchemy import ForeignKey, Integer, Text, Enum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import JSONB
 
@@ -27,7 +27,7 @@ class Shloka(Base):
     text_english: Mapped[str] = mapped_column(Text, nullable=False)  # English translation
 
     #  Rich metadata for future NLP use cases, storing pre-computed linguistic analysis
-    line_type: Mapped[str] = mapped_column(String(50), default="VERSE", nullable=False) # e.g., VERSE, PROSE, HEADER
+    line_type: Mapped[str] = mapped_column(Enum("VERSE", "PROSE", "HEADER", name="line_type_enum", create_type=False), default="VERSE", nullable=False)
     linguistic_analysis: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True) # For NLP results
     
     # Relationships (Less critical for lookup now, but still good for structure)
@@ -35,7 +35,11 @@ class Shloka(Base):
     adhyaya: Mapped["Adhyaya"] = relationship("Adhyaya", back_populates="shlokas")
 
     # Setting up for multilingual explanations later on.
-    explanation_english: Mapped[dict] = mapped_column(JSONB, nullable=True)
-    explanation_marathi: Mapped[dict] = mapped_column(JSONB, nullable=True)
+    explanation_english: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True)
+    explanation_marathi: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True)
 
     feedbacks: Mapped[list["Feedback"]] = relationship("Feedback", back_populates="shloka")
+    
+    def __repr__(self) -> str:
+        return f"<Shloka(id={self.id}, parva={self.parva_num}, adhyaya={self.adhyaya_num}, shloka={self.shloka_num})>"
+
