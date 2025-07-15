@@ -2,7 +2,15 @@ name: "🚀 Development Task"
 description: "A defined task for development, documentation, or project chores."
 labels: ["task"]
 body:
-  - type: input
+  - type: checkboxes
+    id: pre-flight-checks
+    attributes:
+      label: "Pre-flight Checklist"
+      description: "Please ensure you've completed these steps before submitting."
+      options:
+        - label: "I have searched the existing issues and have not found a similar development task."
+          required: true
+  - type: textarea
     id: objective
     attributes:
       label: "Objective"
@@ -47,9 +55,18 @@ body:
     id: definition-of-done
     attributes:
       label: "Definition of Done"
-      description: "This task is complete when all of the following are checked."
+      description: "This task is complete when all of the following are checked. Add more criteria if needed."
       options:
         - label: "All code changes are implemented."
         - label: "Relevant tests have been added and are passing."
         - label: "The application runs successfully locally with these changes."
         - label: "The corresponding Pull Request has been reviewed and merged."
+        - label: "Other (please specify below)"
+  - type: textarea
+    id: definition-of-done-other
+    attributes:
+      label: "Other Definition of Done Criteria (Optional)"
+      description: "List any additional or custom criteria for this task, if you checked 'Other' above."
+      placeholder: "e.g., Documentation updated, deployment tested, etc."
+    validations:
+      required: false
