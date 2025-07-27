@@ -22,7 +22,7 @@ WORKDIR /app
 
 # Copy dependency definition files and install dependencies
 COPY pyproject.toml uv.lock* ./
-RUN uv sync --no-dev
+RUN uv sync --no-dev --no-cache
 
 # Copy the rest of the application code
 COPY . .
