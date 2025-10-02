@@ -12,7 +12,9 @@ class Parva(Base):
     __tablename__ = "parvas"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
-    title_sanskrit: Mapped[str] = mapped_column(String(255), nullable=False, unique=True)
+    title_sanskrit: Mapped[str] = mapped_column(
+        String(255), nullable=False, unique=True
+    )
     title_english: Mapped[str] = mapped_column(String, nullable=False, unique=True)
     parva_num: Mapped[int] = mapped_column(Integer, nullable=False, unique=True)
 
