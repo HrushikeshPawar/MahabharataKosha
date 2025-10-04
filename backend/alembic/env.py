@@ -16,7 +16,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 # --- Import your models' Base object ---
 # This is the declarative base from which all your models inherit.
 # Alembic uses this to detect the schema changes.
-from app.models import Base # type: ignore
+from app.models import Base  # type: ignore
 
 # Load environment variables from a .env file.
 # This is crucial for loading the DATABASE_URL when running migrations.
@@ -66,9 +66,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
